@@ -1,18 +1,18 @@
-# swagger_client.AccountApi
+# swagger_client.NumberApi
 
 All URIs are relative to *https://fax.to/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**balance_get**](AccountApi.md#balance_get) | **GET** /balance | 
+[**numbers_get**](NumberApi.md#numbers_get) | **GET** /numbers | 
 
 
-# **balance_get**
-> balance_get(api_key)
+# **numbers_get**
+> numbers_get(api_key, page=page)
 
 
 
-This API get users balance. 
+This API get users numbers. 
 
 ### Example 
 ```python
@@ -23,13 +23,14 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AccountApi()
+api_instance = swagger_client.NumberApi()
 api_key = 'api_key_example' # str | API Key
+page = 'page_example' # str | Page to display (optional)
 
 try: 
-    api_instance.balance_get(api_key)
+    api_instance.numbers_get(api_key, page=page)
 except ApiException as e:
-    print("Exception when calling AccountApi->balance_get: %s\n" % e)
+    print("Exception when calling NumberApi->numbers_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -37,6 +38,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **api_key** | **str**| API Key | 
+ **page** | **str**| Page to display | [optional] 
 
 ### Return type
 

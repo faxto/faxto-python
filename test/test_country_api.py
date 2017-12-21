@@ -19,53 +19,53 @@ import unittest
 
 import swagger_client
 from swagger_client.rest import ApiException
-from swagger_client.apis.files_api import FilesApi
+from swagger_client.apis.country_api import CountryApi
 
 
-class TestFilesApi(unittest.TestCase):
-    """ FilesApi unit test stubs """
+class TestCountryApi(unittest.TestCase):
+    """ CountryApi unit test stubs """
 
     def setUp(self):
-        self.api = swagger_client.apis.files_api.FilesApi()
+        self.api = swagger_client.apis.country_api.CountryApi()
 
     def tearDown(self):
         pass
 
-    def test_file_clean_get(self):
+    def test_areacodes_country_code_state_id_get(self):
         """
-        Test case for file_clean_get
+        Test case for areacodes_country_code_state_id_get
 
         
         """
         pass
 
-    def test_file_generate_preview_get(self):
+    def test_countries_country_code_didgroups_get(self):
         """
-        Test case for file_generate_preview_get
+        Test case for countries_country_code_didgroups_get
 
         
         """
         pass
 
-    def test_files_get(self):
+    def test_countries_didgroups_did_group_id_provision_post(self):
         """
-        Test case for files_get
+        Test case for countries_didgroups_did_group_id_provision_post
 
         
         """
         pass
 
-    def test_files_id_delete(self):
+    def test_countries_get(self):
         """
-        Test case for files_id_delete
+        Test case for countries_get
 
         
         """
         pass
 
-    def test_files_post(self):
+    def test_states_country_code_get(self):
         """
-        Test case for files_post
+        Test case for states_country_code_get
 
         
         """

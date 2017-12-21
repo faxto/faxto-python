@@ -1,13 +1,15 @@
 # swagger_client.FaxApi
 
-All URIs are relative to *https://fax.to/api/v1*
+All URIs are relative to *https://fax.to/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**fax_document_id_costs_get**](FaxApi.md#fax_document_id_costs_get) | **GET** /fax/{document_id}/costs | 
-[**fax_history_get**](FaxApi.md#fax_history_get) | **GET** /fax-history | 
+[**fax_get**](FaxApi.md#fax_get) | **GET** /fax | 
 [**fax_job_id_status_get**](FaxApi.md#fax_job_id_status_get) | **GET** /fax/{job_id}/status | 
-[**fax_post**](FaxApi.md#fax_post) | **POST** /fax | 
+[**incoming_faxes_get**](FaxApi.md#incoming_faxes_get) | **GET** /incoming-faxes | 
+[**incoming_faxes_number_get**](FaxApi.md#incoming_faxes_number_get) | **GET** /incoming-faxes/{number} | 
+[**provision_numbers_get**](FaxApi.md#provision_numbers_get) | **GET** /provision-numbers | 
 
 
 # **fax_document_id_costs_get**
@@ -60,8 +62,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **fax_history_get**
-> fax_history_get(api_key, limit=limit, page=page)
+# **fax_get**
+> fax_get(api_key, limit=limit, page=page)
 
 
 
@@ -82,9 +84,9 @@ limit = 'limit_example' # str | Number of records to return (optional)
 page = 'page_example' # str | Page to display (optional)
 
 try: 
-    api_instance.fax_history_get(api_key, limit=limit, page=page)
+    api_instance.fax_get(api_key, limit=limit, page=page)
 except ApiException as e:
-    print("Exception when calling FaxApi->fax_history_get: %s\n" % e)
+    print("Exception when calling FaxApi->fax_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -158,12 +160,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **fax_post**
-> fax_post(api_key, fax_number, document_id=document_id, tsi_number=tsi_number, file=file, delete_file=delete_file)
+# **incoming_faxes_get**
+> incoming_faxes_get(api_key)
 
 
 
-This API send the fax. When we send fax using API, Fax.to send a POST to the Callback URL you specified in https://fax.to/member/api/live. Fax.to send POST data with the following information fax_job_id, status and message. 
+This API get faxes . 
 
 ### Example 
 ```python
@@ -176,16 +178,11 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.FaxApi()
 api_key = 'api_key_example' # str | API Key
-fax_number = 'fax_number_example' # str | Fax Number
-document_id = 56 # int | Document id. If you want to use existing document you need to specify the document_id (optional)
-tsi_number = 'tsi_number_example' # str | If we want to to change the text or number that appear on 'from' or 'sender' of the fax (optional)
-file = '/path/to/file.txt' # file | PDF file to upload (optional)
-delete_file = 56 # int | Whether to delete file after fax transaction. (put 1 to delete) (optional)
 
 try: 
-    api_instance.fax_post(api_key, fax_number, document_id=document_id, tsi_number=tsi_number, file=file, delete_file=delete_file)
+    api_instance.incoming_faxes_get(api_key)
 except ApiException as e:
-    print("Exception when calling FaxApi->fax_post: %s\n" % e)
+    print("Exception when calling FaxApi->incoming_faxes_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -193,11 +190,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **api_key** | **str**| API Key | 
- **fax_number** | **str**| Fax Number | 
- **document_id** | **int**| Document id. If you want to use existing document you need to specify the document_id | [optional] 
- **tsi_number** | **str**| If we want to to change the text or number that appear on &#39;from&#39; or &#39;sender&#39; of the fax | [optional] 
- **file** | **file**| PDF file to upload | [optional] 
- **delete_file** | **int**| Whether to delete file after fax transaction. (put 1 to delete) | [optional] 
 
 ### Return type
 
@@ -209,7 +201,103 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **incoming_faxes_number_get**
+> incoming_faxes_number_get(api_key, number)
+
+
+
+This API get faxes  by number. 
+
+### Example 
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.FaxApi()
+api_key = 'api_key_example' # str | API Key
+number = 'number_example' # str | Number in the fax
+
+try: 
+    api_instance.incoming_faxes_number_get(api_key, number)
+except ApiException as e:
+    print("Exception when calling FaxApi->incoming_faxes_number_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_key** | **str**| API Key | 
+ **number** | **str**| Number in the fax | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **provision_numbers_get**
+> provision_numbers_get(api_key, limit=limit)
+
+
+
+This API get Provision numbers. 
+
+### Example 
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.FaxApi()
+api_key = 'api_key_example' # str | API Key
+limit = 'limit_example' # str | Limit to display (optional)
+
+try: 
+    api_instance.provision_numbers_get(api_key, limit=limit)
+except ApiException as e:
+    print("Exception when calling FaxApi->provision_numbers_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_key** | **str**| API Key | 
+ **limit** | **str**| Limit to display | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -18,8 +18,10 @@ from .models.file import File
 
 # import apis into sdk package
 from .apis.account_api import AccountApi
+from .apis.country_api import CountryApi
 from .apis.fax_api import FaxApi
 from .apis.files_api import FilesApi
+from .apis.number_api import NumberApi
 
 # import ApiClient
 from .api_client import ApiClient

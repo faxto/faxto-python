@@ -39,9 +39,9 @@ class TestFaxApi(unittest.TestCase):
         """
         pass
 
-    def test_fax_history_get(self):
+    def test_fax_get(self):
         """
-        Test case for fax_history_get
+        Test case for fax_get
 
         
         """
@@ -55,9 +55,25 @@ class TestFaxApi(unittest.TestCase):
         """
         pass
 
-    def test_fax_post(self):
+    def test_incoming_faxes_get(self):
         """
-        Test case for fax_post
+        Test case for incoming_faxes_get
+
+        
+        """
+        pass
+
+    def test_incoming_faxes_number_get(self):
+        """
+        Test case for incoming_faxes_number_get
+
+        
+        """
+        pass
+
+    def test_provision_numbers_get(self):
+        """
+        Test case for provision_numbers_get
 
         
         """

@@ -1,22 +1,22 @@
-# swagger_client.FilesApi
+# swagger_client.CountryApi
 
 All URIs are relative to *https://fax.to/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**file_clean_get**](FilesApi.md#file_clean_get) | **GET** /file-clean | 
-[**file_generate_preview_get**](FilesApi.md#file_generate_preview_get) | **GET** /file-generate-preview | 
-[**files_get**](FilesApi.md#files_get) | **GET** /files | 
-[**files_id_delete**](FilesApi.md#files_id_delete) | **DELETE** /files/{id} | 
-[**files_post**](FilesApi.md#files_post) | **POST** /files | 
+[**areacodes_country_code_state_id_get**](CountryApi.md#areacodes_country_code_state_id_get) | **GET** /areacodes/{countryCode}/{stateId} | 
+[**countries_country_code_didgroups_get**](CountryApi.md#countries_country_code_didgroups_get) | **GET** /countries/{countryCode}/didgroups | 
+[**countries_didgroups_did_group_id_provision_post**](CountryApi.md#countries_didgroups_did_group_id_provision_post) | **POST** /countries/didgroups/{didGroupId}/provision | 
+[**countries_get**](CountryApi.md#countries_get) | **GET** /countries | 
+[**states_country_code_get**](CountryApi.md#states_country_code_get) | **GET** /states/{countryCode} | 
 
 
-# **file_clean_get**
-> file_clean_get(api_key, document_id)
+# **areacodes_country_code_state_id_get**
+> areacodes_country_code_state_id_get(country_code, state_id)
 
 
 
-This API get clean file from document id. 
+This API get areacodes . 
 
 ### Example 
 ```python
@@ -27,22 +27,22 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FilesApi()
-api_key = 'api_key_example' # str | API Key
-document_id = 'document_id_example' # str | Document ID in the fax
+api_instance = swagger_client.CountryApi()
+country_code = 'country_code_example' # str | countryCode in the Country
+state_id = 'state_id_example' # str | stateId in the Country
 
 try: 
-    api_instance.file_clean_get(api_key, document_id)
+    api_instance.areacodes_country_code_state_id_get(country_code, state_id)
 except ApiException as e:
-    print("Exception when calling FilesApi->file_clean_get: %s\n" % e)
+    print("Exception when calling CountryApi->areacodes_country_code_state_id_get: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| API Key | 
- **document_id** | **str**| Document ID in the fax | 
+ **country_code** | **str**| countryCode in the Country | 
+ **state_id** | **str**| stateId in the Country | 
 
 ### Return type
 
@@ -59,12 +59,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **file_generate_preview_get**
-> file_generate_preview_get(api_key, document_id)
+# **countries_country_code_didgroups_get**
+> countries_country_code_didgroups_get(country_code, did_group_ids, state_id, city_name_pattern)
 
 
 
-This API get generated preview file from document id. 
+This API didgroups countryCode. 
 
 ### Example 
 ```python
@@ -75,22 +75,26 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FilesApi()
-api_key = 'api_key_example' # str | API Key
-document_id = 'document_id_example' # str | Document ID in the fax
+api_instance = swagger_client.CountryApi()
+country_code = 'country_code_example' # str | countryCode in the Country
+did_group_ids = 'did_group_ids_example' # str | didGroupId in the Country
+state_id = 'state_id_example' # str | stateId in the Country
+city_name_pattern = 'city_name_pattern_example' # str | cityNamePattern in the Country
 
 try: 
-    api_instance.file_generate_preview_get(api_key, document_id)
+    api_instance.countries_country_code_didgroups_get(country_code, did_group_ids, state_id, city_name_pattern)
 except ApiException as e:
-    print("Exception when calling FilesApi->file_generate_preview_get: %s\n" % e)
+    print("Exception when calling CountryApi->countries_country_code_didgroups_get: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| API Key | 
- **document_id** | **str**| Document ID in the fax | 
+ **country_code** | **str**| countryCode in the Country | 
+ **did_group_ids** | **str**| didGroupId in the Country | 
+ **state_id** | **str**| stateId in the Country | 
+ **city_name_pattern** | **str**| cityNamePattern in the Country | 
 
 ### Return type
 
@@ -107,12 +111,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **files_get**
-> files_get(api_key)
+# **countries_didgroups_did_group_id_provision_post**
+> countries_didgroups_did_group_id_provision_post(did_group_id)
 
 
 
-This API lists all the files 
+This API didgroups provision. 
 
 ### Example 
 ```python
@@ -123,20 +127,20 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FilesApi()
-api_key = 'api_key_example' # str | API Key
+api_instance = swagger_client.CountryApi()
+did_group_id = 'did_group_id_example' # str | didGroupId in the Country
 
 try: 
-    api_instance.files_get(api_key)
+    api_instance.countries_didgroups_did_group_id_provision_post(did_group_id)
 except ApiException as e:
-    print("Exception when calling FilesApi->files_get: %s\n" % e)
+    print("Exception when calling CountryApi->countries_didgroups_did_group_id_provision_post: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| API Key | 
+ **did_group_id** | **str**| didGroupId in the Country | 
 
 ### Return type
 
@@ -153,12 +157,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **files_id_delete**
-> files_id_delete(api_key, id)
+# **countries_get**
+> countries_get()
 
 
 
-This API deletes a single file. 
+This API get countries. 
 
 ### Example 
 ```python
@@ -169,22 +173,16 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FilesApi()
-api_key = 'api_key_example' # str | API Key
-id = 3.4 # float | id of the file / document
+api_instance = swagger_client.CountryApi()
 
 try: 
-    api_instance.files_id_delete(api_key, id)
+    api_instance.countries_get()
 except ApiException as e:
-    print("Exception when calling FilesApi->files_id_delete: %s\n" % e)
+    print("Exception when calling CountryApi->countries_get: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_key** | **str**| API Key | 
- **id** | **float**| id of the file / document | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -201,12 +199,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **files_post**
-> File files_post(api_key, file, add_remote_file=add_remote_file)
+# **states_country_code_get**
+> states_country_code_get(country_code)
 
 
 
-This API allows uploading of a single file. 
+This API get States . 
 
 ### Example 
 ```python
@@ -217,29 +215,24 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FilesApi()
-api_key = 'api_key_example' # str | API Key
-file = '/path/to/file.txt' # file | PDF file to upload
-add_remote_file = 'add_remote_file_example' # str | Given the remote file url (optional)
+api_instance = swagger_client.CountryApi()
+country_code = 'country_code_example' # str | countryCode in the Country
 
 try: 
-    api_response = api_instance.files_post(api_key, file, add_remote_file=add_remote_file)
-    pprint(api_response)
+    api_instance.states_country_code_get(country_code)
 except ApiException as e:
-    print("Exception when calling FilesApi->files_post: %s\n" % e)
+    print("Exception when calling CountryApi->states_country_code_get: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| API Key | 
- **file** | **file**| PDF file to upload | 
- **add_remote_file** | **str**| Given the remote file url | [optional] 
+ **country_code** | **str**| countryCode in the Country | 
 
 ### Return type
 
-[**File**](File.md)
+void (empty response body)
 
 ### Authorization
 
@@ -247,8 +240,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

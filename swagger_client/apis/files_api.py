@@ -40,6 +40,212 @@ class FilesApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def file_clean_get(self, api_key, document_id, **kwargs):
+        """
+        This API get clean file from document id. 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.file_clean_get(api_key, document_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str api_key: API Key (required)
+        :param str document_id: Document ID in the fax (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.file_clean_get_with_http_info(api_key, document_id, **kwargs)
+        else:
+            (data) = self.file_clean_get_with_http_info(api_key, document_id, **kwargs)
+            return data
+
+    def file_clean_get_with_http_info(self, api_key, document_id, **kwargs):
+        """
+        This API get clean file from document id. 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.file_clean_get_with_http_info(api_key, document_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str api_key: API Key (required)
+        :param str document_id: Document ID in the fax (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['api_key', 'document_id']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method file_clean_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params) or (params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `file_clean_get`")
+        # verify the required parameter 'document_id' is set
+        if ('document_id' not in params) or (params['document_id'] is None):
+            raise ValueError("Missing the required parameter `document_id` when calling `file_clean_get`")
+
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'api_key' in params:
+            query_params.append(('api_key', params['api_key']))
+        if 'document_id' in params:
+            query_params.append(('document_id', params['document_id']))
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api('/file-clean', 'GET',
+                                        path_params,
+                                        query_params,
+                                        header_params,
+                                        body=body_params,
+                                        post_params=form_params,
+                                        files=local_var_files,
+                                        response_type=None,
+                                        auth_settings=auth_settings,
+                                        callback=params.get('callback'),
+                                        _return_http_data_only=params.get('_return_http_data_only'),
+                                        _preload_content=params.get('_preload_content', True),
+                                        _request_timeout=params.get('_request_timeout'),
+                                        collection_formats=collection_formats)
+
+    def file_generate_preview_get(self, api_key, document_id, **kwargs):
+        """
+        This API get generated preview file from document id. 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.file_generate_preview_get(api_key, document_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str api_key: API Key (required)
+        :param str document_id: Document ID in the fax (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.file_generate_preview_get_with_http_info(api_key, document_id, **kwargs)
+        else:
+            (data) = self.file_generate_preview_get_with_http_info(api_key, document_id, **kwargs)
+            return data
+
+    def file_generate_preview_get_with_http_info(self, api_key, document_id, **kwargs):
+        """
+        This API get generated preview file from document id. 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.file_generate_preview_get_with_http_info(api_key, document_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str api_key: API Key (required)
+        :param str document_id: Document ID in the fax (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['api_key', 'document_id']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method file_generate_preview_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params) or (params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `file_generate_preview_get`")
+        # verify the required parameter 'document_id' is set
+        if ('document_id' not in params) or (params['document_id'] is None):
+            raise ValueError("Missing the required parameter `document_id` when calling `file_generate_preview_get`")
+
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'api_key' in params:
+            query_params.append(('api_key', params['api_key']))
+        if 'document_id' in params:
+            query_params.append(('document_id', params['document_id']))
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api('/file-generate-preview', 'GET',
+                                        path_params,
+                                        query_params,
+                                        header_params,
+                                        body=body_params,
+                                        post_params=form_params,
+                                        files=local_var_files,
+                                        response_type=None,
+                                        auth_settings=auth_settings,
+                                        callback=params.get('callback'),
+                                        _return_http_data_only=params.get('_return_http_data_only'),
+                                        _preload_content=params.get('_preload_content', True),
+                                        _request_timeout=params.get('_request_timeout'),
+                                        collection_formats=collection_formats)
+
     def files_get(self, api_key, **kwargs):
         """
         This API lists all the files 
@@ -254,6 +460,7 @@ class FilesApi(object):
             for asynchronous request. (optional)
         :param str api_key: API Key (required)
         :param file file: PDF file to upload (required)
+        :param str add_remote_file: Given the remote file url
         :return: File
                  If the method is called asynchronously,
                  returns the request thread.
@@ -280,12 +487,13 @@ class FilesApi(object):
             for asynchronous request. (optional)
         :param str api_key: API Key (required)
         :param file file: PDF file to upload (required)
+        :param str add_remote_file: Given the remote file url
         :return: File
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['api_key', 'file']
+        all_params = ['api_key', 'file', 'add_remote_file']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -322,6 +530,8 @@ class FilesApi(object):
         local_var_files = {}
         if 'file' in params:
             local_var_files['file'] = params['file']
+        if 'add_remote_file' in params:
+            form_params.append(('AddRemoteFile', params['add_remote_file']))
 
         body_params = None
         # HTTP header `Accept`
